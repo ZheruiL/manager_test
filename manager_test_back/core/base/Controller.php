@@ -7,7 +7,6 @@ class Controller
     protected $_controller;
     protected $_action;
 
-    // 构造函数，初始化属性，并实例化对应模型
     public function __construct($controller, $action)
     {
         $this->_controller = $controller;
