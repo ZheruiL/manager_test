@@ -67,11 +67,13 @@ function tasksTable(handleData){
 }
 
 function createTask(user_id=null){
+    let page = 'user';
     if($("#title").val()==''){
         alert('Title is required');
         return;
     }
     if(user_id===null){
+        page = 'tasks';
         //get from the select form
         user_id=$("#user_select").val();
     }
@@ -80,7 +82,7 @@ function createTask(user_id=null){
         url: "../manager_test_back/task",
         data: { title: $("#title").val(), description: $("#description").val(), user_id: user_id}
     }).done(function() {
-        reloadPage('tasks');
+        reloadPage(page);
     });
 }
 
